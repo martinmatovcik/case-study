@@ -1,7 +1,6 @@
 package com.sii.casestudy.service;
 
 import com.sii.casestudy.model.Transaction;
-
 import java.util.List;
 
 public interface TransactionService {

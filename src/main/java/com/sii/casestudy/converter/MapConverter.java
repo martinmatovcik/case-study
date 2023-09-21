@@ -26,10 +26,10 @@ public class MapConverter implements AttributeConverter<Map<String, String>, Str
   public Map<String, String> convertToEntityAttribute(String dbData) {
     MapType type =
         TypeFactory.defaultInstance().constructMapType(HashMap.class, String.class, String.class);
-      try {
-          return new ObjectMapper().readValue(dbData, type);
-      } catch (JsonProcessingException e) {
-          throw new RuntimeException(e);
-      }
+    try {
+      return new ObjectMapper().readValue(dbData, type);
+    } catch (JsonProcessingException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
