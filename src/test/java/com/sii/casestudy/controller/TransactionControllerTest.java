@@ -15,6 +15,8 @@ import com.sii.casestudy.service.TransactionServiceImpl;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,8 +71,8 @@ public class TransactionControllerTest {
     Transaction testTransaction = createTestTransaction();
     testTransaction.setId(1);
 
-    when(transactionRepository.save(any())).thenReturn(testTransaction);
-
+    when(transactionRepository.findById(1))
+            .thenReturn(Optional.of(testTransaction));
     // When
     mockMvc
         .perform(
